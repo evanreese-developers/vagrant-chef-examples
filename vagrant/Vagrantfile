@@ -17,7 +17,7 @@ VM_USER = 'vagrant'
 # Username on your OS
 USERNAME = "#{ENV['USERNAME'] || `whoami`}"
 
-# Host folder to sync (Currently Only Mac and assumes repo in dir named GitHub)
+# Host folder to sync (Assumes repo in dir named GitHub)
 HOST_PATH = Pathname.new(Dir.pwd).parent.to_s
 
 # Where to sync to on Guest — 'vagrant' is the default user name
@@ -50,7 +50,7 @@ Vagrant.configure(2) do |config|
     yum install -y git
     curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
     sudo yum install -y nodejs
-    sudp yum install -y build-essential
+    sudo yum install -y build-essential
     sudo npm install -g npm
     sudo yum remove docker \
     docker-common \
