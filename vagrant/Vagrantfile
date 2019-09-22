@@ -1,0 +1,71 @@
+# encoding: utf-8
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'pathname'
+
+# Box / OS
+VAGRANT_BOX = 'centos/7'
+VAGRANT_BOX_VERSION = '1905.1'
+
+# Memorable name for your
+VM_NAME = 'chef-test-vm'
+
+# VM User — 'vagrant' by default
+VM_USER = 'vagrant'
+
+# Username on your OS
+USERNAME = "#{ENV['USERNAME'] || `whoami`}"
+
+# Host folder to sync (Currently Only Mac and assumes repo in dir named GitHub)
+HOST_PATH = Pathname.new(Dir.pwd).parent.to_s
+
+# Where to sync to on Guest — 'vagrant' is the default user name
+GUEST_PATH = "/home/" + VM_USER + "/" + File.basename(HOST_PATH)
+
+Vagrant.configure(2) do |config|
+  # Vagrant box from Hashicorp
+  config.vagrant.plugins = "vagrant-vbguest"
+  config.vm.box = VAGRANT_BOX
+  config.vm.box_version = VAGRANT_BOX_VERSION
+
+  # Actual machine name
+  config.vm.hostname = VM_NAME
+
+  #Setup Network Details
+  config.vm.network "private_network", ip: "172.28.128.16"
+
+  # Set VM name in Virtualbox
+  config.vm.provider "virtualbox" do |v|
+    v.name = VM_NAME
+    v.memory = 1536
+  end
+
+  # Sync folder
+  config.vm.synced_folder HOST_PATH, GUEST_PATH
+
+  # Install Git, Node.js 12.x.x, Latest npm
+  config.vm.provision "shell", inline: <<-SHELL
+    yum update
+    yum install -y git
+    curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
+    sudo yum install -y nodejs
+    sudp yum install -y build-essential
+    sudo npm install -g npm
+    sudo yum remove docker \
+    docker-common \
+    docker-selinux \
+    docker-engine
+    sudo yum install -y yum-utils \
+    device-mapper-persistent-data \
+    lvm2
+    sudo yum-config-manager \
+      --add-repo \
+      https://download.docker.com/linux/centos/docker-ce.repo
+    sudo yum install -y docker-ce docker-ce-cli containerd.io
+    sudo systemctl start docker
+    yum update
+    yum upgrade -y
+    yum autoremove -y
+  SHELL
+end
