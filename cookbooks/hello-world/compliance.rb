@@ -3,3 +3,7 @@
     action :remove
   end
 end
+
+file "/welcome" do
+  action :delete
+end
