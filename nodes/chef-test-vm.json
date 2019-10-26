@@ -246,24 +246,24 @@
         "2M": "1527808kB"
       },
       "total": "1530916kB",
-      "free": "749156kB",
-      "available": "1170212kB",
+      "free": "553332kB",
+      "available": "1154104kB",
       "buffers": "2068kB",
-      "cached": "529488kB",
-      "active": "339264kB",
-      "inactive": "301732kB",
+      "cached": "699312kB",
+      "active": "384548kB",
+      "inactive": "426208kB",
       "dirty": "12kB",
       "writeback": "0kB",
-      "anon_pages": "109504kB",
-      "mapped": "28276kB",
-      "slab": "86316kB",
-      "slab_reclaimable": "56216kB",
-      "slab_unreclaim": "30100kB",
-      "page_tables": "5572kB",
+      "anon_pages": "109392kB",
+      "mapped": "28340kB",
+      "slab": "107208kB",
+      "slab_reclaimable": "75800kB",
+      "slab_unreclaim": "31408kB",
+      "page_tables": "5520kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "2862604kB",
-      "committed_as": "420688kB",
+      "committed_as": "419908kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "13852kB",
       "vmalloc_chunk": "34359718056kB",
@@ -513,16 +513,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "334368",
-              "packets": "2802",
+              "bytes": "592815",
+              "packets": "6677",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "485346",
-              "packets": "4068",
+              "bytes": "27367638",
+              "packets": "23916",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -539,8 +539,8 @@
               "collisions": "0"
             },
             "rx": {
-              "bytes": "42666",
-              "packets": "489",
+              "bytes": "90386",
+              "packets": "1036",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -560,10 +560,10 @@
     "platform": "centos",
     "platform_version": "7.7.1908",
     "platform_family": "rhel",
-    "uptime_seconds": 13525,
-    "uptime": "3 hours 45 minutes 25 seconds",
-    "idletime_seconds": 13436,
-    "idletime": "3 hours 43 minutes 56 seconds",
+    "uptime_seconds": 28625,
+    "uptime": "7 hours 57 minutes 05 seconds",
+    "idletime_seconds": 28482,
+    "idletime": "7 hours 54 minutes 42 seconds",
     "dmi": {
       "dmidecode_version": "3.2",
       "smbios_version": "2.5",
@@ -933,6 +933,13 @@
           "uid": 48,
           "shell": "/sbin/nologin",
           "gecos": "Apache"
+        },
+        "mysql": {
+          "dir": "/var/lib/mysql",
+          "gid": 27,
+          "uid": 27,
+          "shell": "/sbin/nologin",
+          "gecos": "MariaDB Server"
         }
       },
       "group": {
@@ -1211,6 +1218,12 @@
           "members": [
 
           ]
+        },
+        "mysql": {
+          "gid": 27,
+          "members": [
+
+          ]
         }
       }
     },
@@ -1368,24 +1381,25 @@
             "relatime",
             "seclabel",
             "size=153092k",
-            "mode=700"
+            "mode=700",
+            "uid=1000",
+            "gid=1000"
           ],
           "mounts": [
             "/dev/shm",
             "/run",
             "/sys/fs/cgroup",
-            "/run/user/1000",
-            "/run/user/0"
+            "/run/user/1000"
           ]
         },
         "/dev/sda1": {
           "kb_size": "41921540",
-          "kb_used": "5678892",
-          "kb_available": "36242648",
+          "kb_used": "5800464",
+          "kb_available": "36121076",
           "percent_used": "14%",
           "total_inodes": "20971008",
-          "inodes_used": "127389",
-          "inodes_available": "20843619",
+          "inodes_used": "127968",
+          "inodes_available": "20843040",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -1403,9 +1417,9 @@
         },
         "home_vagrant_vagrant-chef-examples": {
           "kb_size": "244912536",
-          "kb_used": "207403584",
-          "kb_available": "37508952",
-          "percent_used": "85%",
+          "kb_used": "208668716",
+          "kb_available": "36243820",
+          "percent_used": "86%",
           "fs_type": "vboxsf",
           "mount_options": [
             "rw",
@@ -1652,12 +1666,12 @@
         },
         "/run": {
           "kb_size": "765456",
-          "kb_used": "8772",
-          "kb_available": "756684",
+          "kb_used": "8716",
+          "kb_available": "756740",
           "percent_used": "2%",
           "total_inodes": "191364",
-          "inodes_used": "427",
-          "inodes_available": "190937",
+          "inodes_used": "411",
+          "inodes_available": "190953",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1695,12 +1709,12 @@
         },
         "/": {
           "kb_size": "41921540",
-          "kb_used": "5678892",
-          "kb_available": "36242648",
+          "kb_used": "5800464",
+          "kb_available": "36121076",
           "percent_used": "14%",
           "total_inodes": "20971008",
-          "inodes_used": "127389",
-          "inodes_available": "20843619",
+          "inodes_used": "127968",
+          "inodes_available": "20843040",
           "inodes_percent_used": "1%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1714,9 +1728,9 @@
         },
         "/home/vagrant/vagrant-chef-examples": {
           "kb_size": "244912536",
-          "kb_used": "207403584",
-          "kb_available": "37508952",
-          "percent_used": "85%",
+          "kb_used": "208668716",
+          "kb_available": "36243820",
+          "percent_used": "86%",
           "fs_type": "vboxsf",
           "mount_options": [
             "rw",
@@ -1750,29 +1764,6 @@
             "mode=700",
             "uid=1000",
             "gid=1000"
-          ],
-          "devices": [
-            "tmpfs"
-          ]
-        },
-        "/run/user/0": {
-          "kb_size": "153092",
-          "kb_used": "0",
-          "kb_available": "153092",
-          "percent_used": "0%",
-          "total_inodes": "191364",
-          "inodes_used": "1",
-          "inodes_available": "191363",
-          "inodes_percent_used": "1%",
-          "fs_type": "tmpfs",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "relatime",
-            "seclabel",
-            "size=153092k",
-            "mode=700"
           ],
           "devices": [
             "tmpfs"
@@ -2140,13 +2131,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "765456",
-          "kb_used": "8772",
-          "kb_available": "756684",
+          "kb_used": "8716",
+          "kb_available": "756740",
           "percent_used": "2%",
           "mount": "/run",
           "total_inodes": "191364",
-          "inodes_used": "427",
-          "inodes_available": "190937",
+          "inodes_used": "411",
+          "inodes_available": "190953",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2181,13 +2172,13 @@
         "/dev/sda1,/": {
           "device": "/dev/sda1",
           "kb_size": "41921540",
-          "kb_used": "5678892",
-          "kb_available": "36242648",
+          "kb_used": "5800464",
+          "kb_available": "36121076",
           "percent_used": "14%",
           "mount": "/",
           "total_inodes": "20971008",
-          "inodes_used": "127389",
-          "inodes_available": "20843619",
+          "inodes_used": "127968",
+          "inodes_available": "20843040",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -2203,9 +2194,9 @@
         "home_vagrant_vagrant-chef-examples,/home/vagrant/vagrant-chef-examples": {
           "device": "home_vagrant_vagrant-chef-examples",
           "kb_size": "244912536",
-          "kb_used": "207403584",
-          "kb_available": "37508952",
-          "percent_used": "85%",
+          "kb_used": "208668716",
+          "kb_available": "36243820",
+          "percent_used": "86%",
           "mount": "/home/vagrant/vagrant-chef-examples",
           "fs_type": "vboxsf",
           "mount_options": [
@@ -2239,28 +2230,6 @@
             "mode=700",
             "uid=1000",
             "gid=1000"
-          ]
-        },
-        "tmpfs,/run/user/0": {
-          "device": "tmpfs",
-          "kb_size": "153092",
-          "kb_used": "0",
-          "kb_available": "153092",
-          "percent_used": "0%",
-          "mount": "/run/user/0",
-          "total_inodes": "191364",
-          "inodes_used": "1",
-          "inodes_available": "191363",
-          "inodes_percent_used": "1%",
-          "fs_type": "tmpfs",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "relatime",
-            "seclabel",
-            "size=153092k",
-            "mode=700"
           ]
         },
         "sysfs,/sys": {
@@ -2656,7 +2625,7 @@
       "search-state-factory": "/usr/local/share/factory/var",
       "search-configuration": "/root/.config"
     },
-    "ohai_time": 1571887798.4827938,
+    "ohai_time": 1572060547.572691,
     "packages": {
       "grub2": {
         "epoch": "1",
@@ -3717,6 +3686,13 @@
         "installdate": "1559409268",
         "arch": "x86_64"
       },
+      "perl-IO-Compress": {
+        "epoch": "0",
+        "version": "2.061",
+        "release": "2.el7",
+        "installdate": "1571887809",
+        "arch": "noarch"
+      },
       "iptables": {
         "epoch": "0",
         "version": "1.4.21",
@@ -3729,6 +3705,13 @@
         "version": "2.2.51",
         "release": "14.el7",
         "installdate": "1559409270",
+        "arch": "x86_64"
+      },
+      "perl-DBI": {
+        "epoch": "0",
+        "version": "1.627",
+        "release": "4.el7",
+        "installdate": "1571887810",
         "arch": "x86_64"
       },
       "python-linux-procfs": {
@@ -3744,6 +3727,13 @@
         "release": "20.el7",
         "installdate": "1559409271",
         "arch": "x86_64"
+      },
+      "epel-release": {
+        "epoch": "0",
+        "version": "7",
+        "release": "12",
+        "installdate": "1572060096",
+        "arch": "noarch"
       },
       "cups-libs": {
         "epoch": "1",
@@ -5806,11 +5796,25 @@
         "installdate": "1569119257",
         "arch": "x86_64"
       },
+      "perl-Data-Dumper": {
+        "epoch": "0",
+        "version": "2.145",
+        "release": "3.el7",
+        "installdate": "1571887809",
+        "arch": "x86_64"
+      },
       "nss-pem": {
         "epoch": "0",
         "version": "1.0.3",
         "release": "7.el7",
         "installdate": "1569119257",
+        "arch": "x86_64"
+      },
+      "perl-Compress-Raw-Zlib": {
+        "epoch": "1",
+        "version": "2.061",
+        "release": "4.el7",
+        "installdate": "1571887809",
         "arch": "x86_64"
       },
       "e2fsprogs-libs": {
@@ -5820,6 +5824,13 @@
         "installdate": "1569119257",
         "arch": "x86_64"
       },
+      "mariadb": {
+        "epoch": "1",
+        "version": "5.5.64",
+        "release": "1.el7",
+        "installdate": "1571887810",
+        "arch": "x86_64"
+      },
       "iproute": {
         "epoch": "0",
         "version": "4.11.0",
@@ -5827,11 +5838,25 @@
         "installdate": "1569119257",
         "arch": "x86_64"
       },
+      "perl-PlRPC": {
+        "epoch": "0",
+        "version": "0.2020",
+        "release": "14.el7",
+        "installdate": "1571887810",
+        "arch": "noarch"
+      },
       "libldb": {
         "epoch": "0",
         "version": "1.4.2",
         "release": "1.el7",
         "installdate": "1569119257",
+        "arch": "x86_64"
+      },
+      "perl-DBD-MySQL": {
+        "epoch": "0",
+        "version": "4.023",
+        "release": "6.el7",
+        "installdate": "1571887810",
         "arch": "x86_64"
       },
       "python-firewall": {
@@ -5841,11 +5866,25 @@
         "installdate": "1569119258",
         "arch": "noarch"
       },
+      "unzip": {
+        "epoch": "0",
+        "version": "6.0",
+        "release": "20.el7",
+        "installdate": "1571887815",
+        "arch": "x86_64"
+      },
       "grub2-pc-modules": {
         "epoch": "1",
         "version": "2.02",
         "release": "0.80.el7.centos",
         "installdate": "1569119258",
+        "arch": "noarch"
+      },
+      "webtatic-release": {
+        "epoch": "0",
+        "version": "7",
+        "release": "3",
+        "installdate": "1572060097",
         "arch": "noarch"
       },
       "libicu": {
@@ -6665,11 +6704,32 @@
         "installdate": "1559409267",
         "arch": "noarch"
       },
+      "perl-Compress-Raw-Bzip2": {
+        "epoch": "0",
+        "version": "2.061",
+        "release": "3.el7",
+        "installdate": "1571887809",
+        "arch": "x86_64"
+      },
       "libtirpc": {
         "epoch": "0",
         "version": "0.2.4",
         "release": "0.16.el7",
         "installdate": "1569119257",
+        "arch": "x86_64"
+      },
+      "perl-Net-Daemon": {
+        "epoch": "0",
+        "version": "0.48",
+        "release": "5.el7",
+        "installdate": "1571887810",
+        "arch": "noarch"
+      },
+      "mariadb-server": {
+        "epoch": "1",
+        "version": "5.5.64",
+        "release": "1.el7",
+        "installdate": "1571887812",
         "arch": "x86_64"
       },
       "python-perf": {
@@ -6934,7 +6994,7 @@
       "ULONG_MAX": 18446744073709551615,
       "USHRT_MAX": 65535,
       "WORD_BIT": 32,
-      "_AVPHYS_PAGES": 186291,
+      "_AVPHYS_PAGES": 137640,
       "_NPROCESSORS_CONF": 1,
       "_NPROCESSORS_ONLN": 1,
       "_PHYS_PAGES": 382729,

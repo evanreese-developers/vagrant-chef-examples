@@ -4,8 +4,10 @@
     end
 end
 execute "epel" do
-    commannd 'rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+    not_if "rpm -qa | grep epel"
+    command 'rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
 end
 execute "webtatic" do
-    rpm -Uvh 'https://mirror.webtatic.com/yum/el7/webtatic-release.rpm'
+    not_if "rpm -qa | grep webtatic"
+    command 'rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm'
 end
