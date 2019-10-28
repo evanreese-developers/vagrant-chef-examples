@@ -34,6 +34,7 @@ Vagrant.configure(2) do |config|
 
   #Setup Network Details
   config.vm.network "private_network", ip: "172.28.128.16"
+  config.vm.network "forwarded_port", guest: 80, host:8080
 
   # Set VM name in Virtualbox
   config.vm.provider "virtualbox" do |v|
