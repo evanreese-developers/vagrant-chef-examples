@@ -19,3 +19,6 @@ template '/tmp/codeigniter.sql' do
         :database_password => mariadb_config_webuser['password']
     })
 end
+execute "configure codeigniter database" do
+    command "mysql -u #{mariadb_config_root['user']} -p#{mariadb_config_root['password']} < /tmp/codeigniter.sql"
+end
