@@ -11,11 +11,6 @@ execute "webtatic" do
     not_if "rpm -qa | grep webtatic"
     command 'rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm'
 end
-%w(mod_php72w php72w-cli php72w-gd php72w-mbstring php-common).each do |p|
-    package p do
-        action :remove
-    end
-end
 %w(mod_php71w php71w-cli php71w-gd php71w-mbstring php71w-mcrypt php71w-mysqlnd php71w-xml).each do |p|
     package p do
         action :install
