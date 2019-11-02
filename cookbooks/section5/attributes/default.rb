@@ -1,1 +1,1 @@
-default['message'] = "Hello Attributes"
+default['memory']['total'] = "16Gb"

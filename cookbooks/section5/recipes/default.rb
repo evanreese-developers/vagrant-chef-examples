@@ -6,5 +6,5 @@
 #
 
 file '/welcome' do 
-  content "#{node['message']}"
+  content "#{node['memory']['total']}"
 end
