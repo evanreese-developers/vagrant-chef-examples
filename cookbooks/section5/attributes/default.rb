@@ -1,1 +1,1 @@
-default['memory']['total'] = "16Gb"
+default['message'] = "Welcome to Section 05"
