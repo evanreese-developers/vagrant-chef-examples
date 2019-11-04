@@ -1,0 +1,21 @@
+Add the following as a knife.rb file in the .chef dir
+
+current_dir = File.dirname(__FILE__)
+log_level  :info
+log_location  STDOUT
+node_name "ereese" #this is the user name from the admin config on server
+client_key "#{current_dir}/evanreese.pem" #this is the admin pem file from the server make sure the permissions are 600
+validation_client_name "chef-validator"
+validation_key "#{current_dir}/ereese_devs-validation.pem" #this is the organization verification pem file from the server make sure the permissions are 600
+chef_server_url "https://test-chef-server/organizations/ereese_devs" #this is the server alias followed by hardcoded organizations followed by the unique organization name
+ssl_verify_mode :verify_none
+cookbook_path ["#{current_dir}/.."] #this is set depending on where your cookbooks are
+
+You will need to add the alias to the ip address to the hosts file in /etc
+the 2 pem files above must be added to the same .chef directory as the knife.rb
+You will need to run
+
+knife ssl fetch
+knife ssl check 
+
+to get the certs straightened out and onto the client
